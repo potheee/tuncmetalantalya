@@ -1,1 +1,1171 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Antalya Kaynak & Metal | Çatı, Ferforje, Kaynak İşleri – Döşemealtı Antalya</title>
+
+<meta name="description" content="Antalya Döşemealtı'nda kaynak, çatı ve ferforje metal işleri. Sağlam işçilik, uygun fiyat ve zamanında teslimat. Hemen arayın: 0 551 505 39 41">
+<meta name="keywords" content="kaynak antalya, ferforje antalya, çatı kaplama antalya, metal işleri antalya, döşemealtı kaynak, kapı ferforje antalya, metal merdiven antalya, çelik konstrüksiyon antalya, demir doğrama antalya">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Antalya Kaynak & Metal">
+<meta name="geo.region" content="TR-07">
+<meta name="geo.placename" content="Döşemealtı, Antalya">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+    --steel:    #1a1f2e;
+    --steel-mid:#252c3d;
+    --steel-lt: #323a50;
+    --fire:     #e85d04;
+    --fire-lt:  #f48c06;
+    --spark:    #ffd166;
+    --chrome:   #c8cdd8;
+    --chrome-lt:#e8ecf4;
+    --white:    #ffffff;
+    --border:   rgba(200,205,216,0.15);
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Barlow', sans-serif; color: var(--chrome-lt); background: var(--steel); line-height: 1.6; }
+
+/* ─── LOGO SVG ─── */
+.logo-svg { width: 44px; height: 44px; flex-shrink: 0; }
+
+/* ─── NAVBAR ─── */
+.nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+    background: rgba(22, 26, 40, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 15px 0;
+    transition: all .3s;
+}
+.nav.scrolled { padding: 10px 0; box-shadow: 0 4px 24px rgba(0,0,0,.4); }
+.nav-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 40px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+.nav-logo-text strong { font-family: 'Oswald', sans-serif; font-size: 17px; font-weight: 700; color: var(--white); letter-spacing: .05em; text-transform: uppercase; }
+.nav-logo-text span { font-size: 10px; color: var(--fire-lt); font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
+.nav-links { display: flex; gap: 26px; list-style: none; }
+.nav-links a { color: var(--chrome); font-weight: 500; font-size: 13px; text-decoration: none; transition: color .2s; letter-spacing: .03em; }
+.nav-links a:hover { color: var(--fire-lt); }
+.nav-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--fire); color: #fff;
+    padding: 10px 22px; border-radius: 6px;
+    font-weight: 700; font-size: 13px; letter-spacing: .04em;
+    text-decoration: none; transition: all .2s;
+    text-transform: uppercase;
+}
+.nav-cta:hover { background: var(--fire-lt); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,93,4,.35); }
+.nav-toggle { display: none; background: rgba(255,255,255,.06); border: 1px solid var(--border); border-radius: 7px; font-size: 18px; color: var(--chrome-lt); cursor: pointer; padding: 8px 12px; }
+.mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(22,26,40,.98); border-bottom: 1px solid var(--border); padding: 14px 20px; flex-direction: column; gap: 4px; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: var(--chrome); text-decoration: none; font-weight: 500; font-size: 15px; padding: 11px 16px; border-radius: 8px; display: flex; align-items: center; gap: 10px; transition: background .2s, color .2s; }
+.mobile-menu a:hover, .mobile-menu .mob-cta { background: rgba(232,93,4,.15); color: var(--fire-lt); }
+.mobile-menu .mob-cta { background: var(--fire); color: #fff !important; font-weight: 700; margin-top: 8px; justify-content: center; border-radius: 8px; }
+.mobile-menu .mob-cta:hover { background: var(--fire-lt); }
+
+/* ─── HERO ─── */
+.hero {
+    margin-top: 74px;
+    min-height: 100vh;
+    position: relative;
+    display: flex; align-items: center;
+    overflow: hidden;
+    background: var(--steel);
+}
+.hero-bg {
+    position: absolute; inset: 0;
+    background: url('hero-metal.jpg') center / cover no-repeat;
+    z-index: 0;
+}
+.hero-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(110deg,
+        rgba(10,12,20,.90) 0%,
+        rgba(10,12,20,.72) 55%,
+        rgba(10,12,20,.40) 100%);
+}
+/* animated spark lines */
+.hero-bg::before {
+    content: '';
+    position: absolute; inset: 0; z-index: 1;
+    background:
+        repeating-linear-gradient(
+            -55deg,
+            transparent,
+            transparent 120px,
+            rgba(232,93,4,.03) 120px,
+            rgba(232,93,4,.03) 121px
+        );
+}
+.hero-inner {
+    max-width: 1200px; margin: 0 auto; padding: 80px 40px;
+    display: grid; grid-template-columns: 1.2fr 1fr;
+    gap: 50px; align-items: center;
+    position: relative; z-index: 1; width: 100%;
+}
+.hero-badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: rgba(232,93,4,.15);
+    border: 1px solid rgba(232,93,4,.4);
+    color: var(--fire-lt);
+    font-size: 10px; font-weight: 700;
+    padding: 6px 14px; border-radius: 50px;
+    margin-bottom: 18px;
+    letter-spacing: .1em; text-transform: uppercase;
+}
+.hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(38px, 5vw, 68px);
+    font-weight: 700; color: var(--white);
+    line-height: 1.05; margin-bottom: 16px;
+    text-transform: uppercase; letter-spacing: .02em;
+}
+.hero h1 .hl { color: var(--fire); }
+.hero-desc {
+    font-size: 16px; color: rgba(255,255,255,.78);
+    line-height: 1.8; margin-bottom: 34px; max-width: 520px;
+    font-weight: 400;
+}
+.btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-wa, .btn-call {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 13px 26px; border-radius: 7px;
+    font-weight: 700; font-size: 14px;
+    text-decoration: none; transition: all .25s;
+    letter-spacing: .04em; text-transform: uppercase;
+}
+.btn-wa { background: #25d366; color: #fff; }
+.btn-wa:hover { background: #1eb358; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(37,211,102,.4); }
+.btn-call { background: rgba(255,255,255,.1); color: #fff; border: 2px solid rgba(255,255,255,.35); backdrop-filter: blur(6px); }
+.btn-call:hover { background: rgba(255,255,255,.18); border-color: #fff; transform: translateY(-2px); }
+
+/* stats */
+.hero-stats { display: flex; flex-direction: column; gap: 14px; }
+.hstat {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    backdrop-filter: blur(10px);
+    border-radius: 14px; padding: 20px 24px;
+    display: flex; align-items: center; gap: 16px;
+    transition: all .3s;
+}
+.hstat:hover { background: rgba(255,255,255,.12); transform: translateX(6px); border-color: rgba(232,93,4,.5); }
+.hstat-ico {
+    width: 48px; height: 48px; border-radius: 11px;
+    background: rgba(232,93,4,.2);
+    border: 1px solid rgba(232,93,4,.35);
+    display: grid; place-items: center;
+    font-size: 20px; color: var(--fire-lt); flex-shrink: 0;
+}
+.hstat h3 { font-family: 'Oswald', sans-serif; font-size: 28px; color: var(--white); line-height: 1; font-weight: 700; }
+.hstat p { font-size: 13px; color: var(--chrome); margin-top: 4px; font-weight: 500; }
+
+/* ─── TOP STRIP ─── */
+.strip {
+    background: linear-gradient(90deg, var(--fire) 0%, #c94a02 100%);
+    padding: 14px 0; text-align: center;
+}
+.strip-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 40px;
+    display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;
+}
+.strip span { color: #fff; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 7px; }
+.strip a {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: #fff; color: var(--fire) !important;
+    padding: 7px 18px; border-radius: 6px;
+    font-weight: 800; font-size: 13px;
+    text-decoration: none; transition: all .2s; white-space: nowrap;
+    text-transform: uppercase; letter-spacing: .04em;
+}
+.strip a:hover { background: #fff8f2; transform: translateY(-1px); }
+
+/* ─── SECTION HEAD ─── */
+.section-head { text-align: center; margin-bottom: 48px; }
+.label {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase;
+    color: var(--fire-lt); margin-bottom: 10px;
+}
+.section-head h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 700; color: var(--white);
+    line-height: 1.15; text-transform: uppercase; letter-spacing: .03em;
+}
+.section-head p { font-size: 15px; color: var(--chrome); margin-top: 10px; }
+
+/* ─── HİZMETLER (kart bölümü) ─── */
+.services-section {
+    background: var(--steel-mid);
+    padding: 90px 0;
+}
+.svc-grid {
+    max-width: 1200px; margin: 0 auto; padding: 0 40px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+}
+.svc-card {
+    background: var(--steel);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--fire);
+    border-radius: 12px; padding: 34px 28px;
+    transition: all .3s; position: relative; overflow: hidden;
+}
+.svc-card::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(232,93,4,.05) 0%, transparent 60%);
+    opacity: 0; transition: opacity .3s;
+}
+.svc-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,.35); border-top-color: var(--fire-lt); }
+.svc-card:hover::after { opacity: 1; }
+.svc-ico {
+    width: 60px; height: 60px; border-radius: 14px; margin-bottom: 20px;
+    background: rgba(232,93,4,.12);
+    border: 1px solid rgba(232,93,4,.25);
+    display: grid; place-items: center;
+    font-size: 24px; color: var(--fire-lt);
+}
+.svc-card h3 {
+    font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700;
+    color: var(--white); margin-bottom: 10px; text-transform: uppercase; letter-spacing: .03em;
+}
+.svc-card p { font-size: 14px; color: var(--chrome); line-height: 1.7; margin-bottom: 20px; }
+.svc-badge {
+    display: inline-block;
+    background: rgba(232,93,4,.12);
+    border: 1px solid rgba(232,93,4,.25);
+    color: var(--fire-lt);
+    font-size: 10px; font-weight: 700;
+    padding: 4px 12px; border-radius: 50px;
+    text-transform: uppercase; letter-spacing: .06em;
+}
+
+/* ─── FOTOĞRAF CAROUSEL ─── */
+.photo-section { background: var(--steel); padding: 80px 0; }
+.photo-wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; position: relative; }
+.photo-track-outer { overflow: hidden; border-radius: 16px; border: 1px solid var(--border); }
+.photo-track { display: flex; transition: transform .5s cubic-bezier(.4,0,.2,1); }
+.photo-slide { flex: 0 0 100%; position: relative; cursor: pointer; }
+.photo-slide img { width: 100%; height: 520px; object-fit: cover; display: block; }
+.photo-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,.8) 0%, transparent 100%);
+    padding: 56px 36px 32px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+}
+.photo-info h3 { font-family: 'Oswald', sans-serif; font-size: 24px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; }
+.photo-info p { font-size: 13px; color: rgba(255,255,255,.75); }
+.photo-order {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--fire); color: #fff !important;
+    padding: 11px 22px; border-radius: 8px;
+    font-weight: 700; font-size: 13px;
+    text-decoration: none; white-space: nowrap;
+    transition: all .25s; text-transform: uppercase; letter-spacing: .04em;
+    box-shadow: 0 4px 16px rgba(232,93,4,.4);
+}
+.photo-order:hover { background: var(--fire-lt); transform: translateY(-2px); }
+.photo-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    display: flex; justify-content: space-between;
+    left: 52px; right: 52px; pointer-events: none; z-index: 10;
+}
+.photo-arrow {
+    pointer-events: all; width: 48px; height: 48px; border-radius: 50%;
+    background: rgba(22,26,40,.85); border: 1px solid var(--border);
+    cursor: pointer; display: grid; place-items: center;
+    font-size: 15px; color: var(--white);
+    transition: all .2s; backdrop-filter: blur(8px);
+}
+.photo-arrow:hover { background: var(--fire); border-color: var(--fire); transform: scale(1.08); }
+.photo-dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+.photo-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--border); cursor: pointer; border: none; transition: all .25s;
+}
+.photo-dot.active { background: var(--fire); width: 28px; border-radius: 5px; }
+.photo-thumbs { display: flex; gap: 10px; margin-top: 14px; justify-content: center; }
+.photo-thumb { width: 80px; height: 56px; border-radius: 8px; overflow: hidden; border: 3px solid transparent; cursor: pointer; transition: all .2s; flex-shrink: 0; }
+.photo-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.photo-thumb.active { border-color: var(--fire); }
+.photo-thumb:hover { opacity: .8; }
+
+/* ─── DETAY CARDS (hizmet detayları) ─── */
+.detail-section {
+    background: var(--steel-mid);
+    padding: 80px 0;
+}
+.detail-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.detail-head-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
+}
+.detail-head-text .label { display: block; }
+.detail-head-text h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 700; color: var(--white);
+    text-transform: uppercase; letter-spacing: .03em;
+    line-height: 1.1; margin-bottom: 16px;
+}
+.detail-head-text h2 em { font-style: normal; color: var(--fire); }
+.detail-head-text p { font-size: 15px; color: var(--chrome); line-height: 1.75; margin-bottom: 12px; }
+.detail-head-text .btns { margin-top: 24px; }
+.detail-cards { display: flex; flex-direction: column; gap: 14px; }
+.dcard {
+    background: var(--steel);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--fire);
+    border-radius: 12px; padding: 20px 22px;
+    display: flex; flex-direction: column; gap: 10px;
+    transition: all .3s;
+}
+.dcard:hover { transform: translateX(5px); border-color: var(--fire-lt); box-shadow: 0 6px 20px rgba(0,0,0,.2); }
+.dcard-top { display: flex; align-items: center; gap: 14px; }
+.dcard-ico {
+    width: 46px; height: 46px; border-radius: 10px;
+    background: rgba(232,93,4,.12);
+    border: 1px solid rgba(232,93,4,.25);
+    display: grid; place-items: center;
+    font-size: 19px; color: var(--fire-lt); flex-shrink: 0;
+}
+.dcard h4 { font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: .04em; }
+.dcard p { font-size: 13px; color: var(--chrome); line-height: 1.6; }
+
+/* ─── HAKKIMIZDA ─── */
+.about-section { background: var(--steel); padding: 80px 0; }
+.about-grid {
+    max-width: 1200px; margin: 0 auto; padding: 0 40px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+.about-visual { position: relative; }
+.about-box {
+    background: linear-gradient(135deg, var(--steel-mid), var(--steel-lt));
+    border: 1px solid var(--border);
+    border-radius: 18px; padding: 50px 36px;
+    text-align: center; position: relative; overflow: hidden;
+}
+.about-box::before { content: ''; position: absolute; top: -30px; right: -30px; width: 160px; height: 160px; border-radius: 50%; background: rgba(232,93,4,.1); }
+.about-box .big-ico { font-size: 72px; color: var(--fire); display: block; margin-bottom: 12px; position: relative; z-index: 1; }
+.about-box p { color: var(--chrome); font-size: 14px; position: relative; z-index: 1; }
+.trust-badge {
+    position: absolute; bottom: -16px; right: -16px;
+    background: var(--fire); color: #fff;
+    border-radius: 12px; padding: 14px 18px;
+    text-align: center; box-shadow: 0 6px 24px rgba(232,93,4,.4);
+}
+.trust-badge strong { display: block; font-family: 'Oswald', sans-serif; font-size: 24px; font-weight: 700; }
+.trust-badge span { font-size: 11px; opacity: .9; }
+.about-text .label { display: block; }
+.about-text h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(26px, 3vw, 40px); font-weight: 700;
+    color: var(--white); text-transform: uppercase; letter-spacing: .03em;
+    line-height: 1.1; margin-bottom: 16px;
+}
+.about-text p { font-size: 15px; color: var(--chrome); line-height: 1.75; margin-bottom: 14px; }
+.checks { display: flex; flex-direction: column; gap: 11px; margin-top: 22px; }
+.check { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: var(--chrome-lt); }
+.check i { color: var(--fire-lt); font-size: 14px; width: 16px; }
+
+/* ─── NEDEN BİZ ─── */
+.why-section {
+    background: linear-gradient(145deg, #0d0f18 0%, #14192a 60%, #0d0f18 100%);
+    padding: 80px 0; position: relative; overflow: hidden;
+}
+.why-section::before {
+    content: ''; position: absolute; right: -180px; top: -120px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,93,4,.08) 0%, transparent 65%);
+    pointer-events: none;
+}
+.why-grid {
+    max-width: 1200px; margin: 0 auto; padding: 0 40px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+    position: relative; z-index: 1;
+}
+.why-card {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 14px; padding: 30px 22px; transition: all .3s; position: relative; overflow: hidden;
+}
+.why-card::after { content: ''; position: absolute; bottom: -25px; right: -25px; width: 90px; height: 90px; border-radius: 50%; background: rgba(232,93,4,.07); transition: all .35s; }
+.why-card:hover { background: rgba(255,255,255,.08); transform: translateY(-5px); border-color: rgba(232,93,4,.3); }
+.why-card:hover::after { width: 130px; height: 130px; }
+.why-ico {
+    width: 50px; height: 50px; border-radius: 12px;
+    background: rgba(232,93,4,.15); border: 1px solid rgba(232,93,4,.25);
+    display: grid; place-items: center; font-size: 20px; color: var(--fire-lt); margin-bottom: 18px;
+}
+.why-card h3 { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+.why-card p { font-size: 13px; color: var(--chrome); line-height: 1.65; }
+
+/* ─── YORUMLAR ─── */
+.testi-section { background: var(--steel-mid); padding: 80px 0; }
+.testi-track-wrap { overflow: hidden; padding: 10px 0 20px; }
+.testi-track { display: flex; gap: 20px; transition: transform .5s cubic-bezier(.4,0,.2,1); }
+.tcard {
+    flex: 0 0 calc(50% - 10px);
+    background: var(--steel);
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 32px 28px; position: relative;
+}
+.tcard::before { content: '\201C'; font-family: 'Oswald', sans-serif; font-size: 80px; color: rgba(232,93,4,.1); position: absolute; top: 4px; left: 18px; line-height: 1; }
+.stars { color: var(--fire-lt); font-size: 12px; margin-bottom: 12px; }
+.tcard blockquote { font-size: 14px; color: var(--chrome); line-height: 1.75; margin-bottom: 18px; font-style: italic; }
+.tcard-author { display: flex; align-items: center; gap: 11px; }
+.avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--fire), var(--fire-lt)); display: grid; place-items: center; font-size: 15px; color: #fff; flex-shrink: 0; }
+.tcard-author h4 { font-size: 14px; font-weight: 600; color: var(--white); }
+.tcard-author span { font-size: 12px; color: var(--chrome); }
+.carousel-controls { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 32px; }
+.arrow { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--border); background: var(--steel); display: grid; place-items: center; cursor: pointer; font-size: 14px; color: var(--chrome-lt); transition: all .2s; }
+.arrow:hover { background: var(--fire); color: #fff; border-color: var(--fire); }
+.dots { display: flex; gap: 7px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); cursor: pointer; transition: all .25s; border: none; }
+.dot.active { background: var(--fire); width: 24px; border-radius: 4px; }
+
+/* ─── KONUM ─── */
+.location-section { background: var(--steel); padding: 80px 0; }
+.loc-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.loc-card { background: var(--steel-mid); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+.loc-info { padding: 36px 40px; display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; }
+.loc-icon { width: 64px; height: 64px; background: var(--fire); border-radius: 14px; display: grid; place-items: center; font-size: 26px; color: #fff; box-shadow: 0 6px 20px rgba(232,93,4,.35); }
+.loc-text h3 { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+.loc-text p { font-size: 15px; color: var(--chrome); line-height: 1.6; }
+.loc-text p strong { color: var(--white); font-weight: 600; }
+.map-embed { width: 100%; height: 420px; border: none; display: block; filter: grayscale(30%) contrast(1.1); }
+
+/* ─── İLETİŞİM ─── */
+.contact-section { background: var(--steel-mid); padding: 80px 0; }
+.contact-grid {
+    max-width: 1200px; margin: 0 auto; padding: 0 40px;
+    display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; align-items: start;
+}
+.cinfo {
+    background: linear-gradient(145deg, #0d0f18 0%, #14192a 60%);
+    border: 1px solid var(--border);
+    color: #fff; border-radius: 16px; padding: 40px 32px;
+}
+.cinfo h3 { font-family: 'Oswald', sans-serif; font-size: 20px; color: var(--white); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 28px; font-weight: 700; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+.irow { display: flex; align-items: flex-start; gap: 13px; margin-bottom: 22px; }
+.iico { width: 46px; height: 46px; border-radius: 10px; flex-shrink: 0; display: grid; place-items: center; font-size: 17px; }
+.iico.ph { background: rgba(255,255,255,.1); color: #a8e890; border: 1px solid rgba(168,232,144,.25); }
+.iico.wa { background: rgba(37,211,102,.2); color: #4ddb85; border: 1px solid rgba(37,211,102,.3); }
+.iico.loc { background: rgba(232,93,4,.2); color: var(--fire-lt); border: 1px solid rgba(232,93,4,.3); }
+.irow h4 { font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--chrome); margin-bottom: 4px; font-weight: 700; }
+.irow p { font-size: 16px; font-weight: 700; color: var(--white); line-height: 1.4; }
+.wa-btn { display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: #fff !important; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 13px; margin-top: 8px; transition: all .25s; text-transform: uppercase; letter-spacing: .04em; }
+.wa-btn:hover { background: #1eb358; transform: translateY(-2px); }
+.hours { background: rgba(255,255,255,.04); border: 1px solid var(--border); border-radius: 11px; padding: 20px; margin-top: 24px; }
+.hours h4 { font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--chrome); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; font-weight: 700; }
+.hrow { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 7px; }
+.hrow span { color: var(--chrome); }
+.hrow strong { color: var(--white); font-weight: 700; }
+.hrow strong.kapali { color: rgba(255,255,255,.25); }
+.form-wrap { background: var(--steel); border: 1px solid var(--border); border-radius: 16px; padding: 40px 36px; }
+.form-wrap h3 { font-family: 'Oswald', sans-serif; font-size: 20px; color: var(--white); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 24px; font-weight: 700; }
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.fg { margin-bottom: 16px; }
+.fg label { display: block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--chrome); margin-bottom: 6px; }
+.fg input, .fg textarea, .fg select {
+    width: 100%; padding: 11px 14px;
+    border: 1px solid rgba(200,205,216,.2);
+    border-radius: 8px; font-size: 14px; font-family: 'Barlow', sans-serif;
+    color: var(--white); background: var(--steel-mid); transition: border-color .2s;
+}
+.fg input:focus, .fg textarea:focus, .fg select:focus { outline: none; border-color: var(--fire); }
+.fg textarea { resize: vertical; min-height: 110px; }
+.fg select option { background: var(--steel-mid); color: var(--white); }
+.submit-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--fire); color: #fff; border: none; cursor: pointer;
+    padding: 13px 28px; border-radius: 8px; font-weight: 700; font-size: 14px;
+    font-family: 'Barlow', sans-serif; transition: all .25s;
+    text-transform: uppercase; letter-spacing: .06em;
+}
+.submit-btn:hover { background: var(--fire-lt); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(232,93,4,.35); }
+
+/* ─── FOOTER ─── */
+footer {
+    background: #090c12;
+    color: rgba(255,255,255,.4);
+    padding: 32px 0; text-align: center;
+    border-top: 1px solid rgba(255,255,255,.04);
+}
+.footer-logo { display: flex; align-items: center; justify-content: center; gap: 9px; margin-bottom: 8px; }
+.footer-logo span { font-family: 'Oswald', sans-serif; font-size: 16px; color: var(--white); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+footer p { font-size: 12px; }
+.footer-seo { max-width: 800px; margin: 14px auto 0; font-size: 11px; color: rgba(255,255,255,.2); line-height: 1.6; }
+
+/* ─── FADE IN ─── */
+.fi { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.fi.vis { opacity: 1; transform: translateY(0); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-toggle { display: block; }
+    .hero-inner, .about-grid, .contact-grid, .detail-head-grid { grid-template-columns: 1fr; gap: 32px; }
+    .hero { min-height: 80vh; }
+    .hero-inner { padding: 60px 20px; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .tcard { flex: 0 0 calc(90% - 10px); }
+    .frow { grid-template-columns: 1fr; }
+    .nav-inner, .about-grid, .why-grid, .contact-grid { padding: 0 20px; }
+    .svc-grid { grid-template-columns: 1fr 1fr; padding: 0 20px; }
+    .detail-inner { padding: 0 20px; }
+    .photo-wrap { padding: 0 20px; }
+    .photo-nav { left: 32px; right: 32px; }
+    .photo-slide img { height: 340px; }
+    .photo-overlay { padding: 30px 20px 20px; }
+    .photo-info h3 { font-size: 18px; }
+    .loc-info { grid-template-columns: 1fr; text-align: center; gap: 20px; padding: 24px 20px; }
+    .loc-icon { margin: 0 auto; }
+    .photo-thumbs { gap: 6px; }
+    .photo-thumb { width: 58px; height: 42px; }
+}
+@media (max-width: 640px) {
+    .svc-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .btns { flex-direction: column; }
+    .nav-cta { display: none; }
+    .map-embed { height: 300px; }
+    .photo-slide img { height: 260px; }
+    .photo-overlay { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .photo-nav { display: none; }
+    .photo-thumb { width: 48px; height: 34px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="nav" id="mainNav">
+    <div class="nav-inner">
+        <a href="#anasayfa" class="nav-logo">
+            <!-- SVG LOGO -->
+            <svg class="logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="44" height="44" rx="10" fill="#e85d04"/>
+                <!-- Kaynak kıvılcım / alev simgesi -->
+                <path d="M22 8 L26 18 L30 14 L24 26 L28 22 L20 36 L18 24 L14 28 L20 16 L16 20 Z" fill="white" opacity="0.95"/>
+                <circle cx="22" cy="22" r="3" fill="#ffd166"/>
+            </svg>
+            <div class="nav-logo-text">
+                <strong>Antalya Metal</strong>
+                <span>Kaynak · Çatı · Ferforje</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#anasayfa">Anasayfa</a></li>
+            <li><a href="#hizmetler">Hizmetler</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#hakkimizda">Hakkımızda</a></li>
+            <li><a href="#neden-biz">Neden Biz</a></li>
+            <li><a href="#konum">Konum</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+        <a href="tel:05515053941" class="nav-cta">
+            <i class="fa-solid fa-phone"></i> Hemen Ara
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç">
+            <i class="fa-solid fa-bars" id="toggleIcon"></i>
+        </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#anasayfa"><i class="fa-solid fa-house"></i> Anasayfa</a>
+        <a href="#hizmetler"><i class="fa-solid fa-tools"></i> Hizmetler</a>
+        <a href="#galeri"><i class="fa-solid fa-images"></i> Galeri</a>
+        <a href="#hakkimizda"><i class="fa-solid fa-info-circle"></i> Hakkımızda</a>
+        <a href="#neden-biz"><i class="fa-solid fa-star"></i> Neden Biz</a>
+        <a href="#konum"><i class="fa-solid fa-map-marker-alt"></i> Konum</a>
+        <a href="#iletisim"><i class="fa-solid fa-envelope"></i> İletişim</a>
+        <a href="tel:05515053941" class="mob-cta"><i class="fa-solid fa-phone"></i> Hemen Ara: 0 551 505 39 41</a>
+    </div>
+</nav>
+
+<!-- ═══ STRIP ═══ -->
+<div class="strip" style="margin-top:74px">
+    <div class="strip-inner">
+        <span><i class="fa-solid fa-fire" style="color:#ffd166"></i> Hızlı Teslimat & Sağlam İşçilik</span>
+        <span>Antalya'da Kaynak, Çatı & Ferforje İşleriniz İçin</span>
+        <a href="https://wa.me/905515053941?text=Merhaba%2C%20kaynak%20ve%20metal%20işleri%20hakkında%20bilgi%20almak%20istiyorum." target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Teklif Al
+        </a>
+    </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="anasayfa" class="hero" style="margin-top:0">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+        <div>
+            <div class="hero-badge"><i class="fa-solid fa-location-dot"></i> Döşemealtı, Antalya</div>
+            <h1>
+                Kaynak, <span class="hl">Çatı</span> &<br>
+                Ferforje Metal<br>
+                <span class="hl">İşlerinizde</span> Ustayız
+            </h1>
+            <p class="hero-desc">
+                Kaynak, çatı ve metal ferforje işleriniz için doğru yerdesiniz. Sağlam işçilik, uygun fiyat ve zamanında teslimat için bize yazabilirsiniz.
+            </p>
+            <div class="btns">
+                <a href="https://wa.me/905515053941?text=Merhaba%2C%20kaynak%20ve%20metal%20işleri%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn-wa">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Teklif Al
+                </a>
+                <a href="tel:05515053941" class="btn-call">
+                    <i class="fa-solid fa-phone"></i> Hemen Ara
+                </a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="hstat">
+                <div class="hstat-ico"><i class="fa-solid fa-award"></i></div>
+                <div><h3>10+ Yıl</h3><p>Sektör Deneyimi</p></div>
+            </div>
+            <div class="hstat">
+                <div class="hstat-ico"><i class="fa-solid fa-helmet-safety"></i></div>
+                <div><h3>500+</h3><p>Tamamlanan Proje</p></div>
+            </div>
+            <div class="hstat">
+                <div class="hstat-ico"><i class="fa-solid fa-shield-halved"></i></div>
+                <div><h3>%100</h3><p>Müşteri Memnuniyeti</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ HİZMETLER ═══ -->
+<section id="hizmetler" class="services-section">
+    <div style="max-width:1200px;margin:0 auto;padding:0 40px">
+        <div class="section-head fi">
+            <span class="label">Hizmetlerimiz</span>
+            <h2>Ne Yapıyoruz?</h2>
+            <p>Antalya genelinde profesyonel kaynak, çatı ve ferforje metal hizmetleri</p>
+        </div>
+    </div>
+    <div class="svc-grid">
+        <div class="svc-card fi">
+            <div class="svc-ico"><i class="fa-solid fa-fire-flame-curved"></i></div>
+            <span class="svc-badge">Uzmanlık</span>
+            <h3>Kaynak İşleri</h3>
+            <p>MIG/MAG, TIG, elektrik kaynağı ile her türlü metal yapı ve imalat kaynak hizmetleri. İnce sacdan ağır çeliğe tüm işleriniz için.</p>
+        </div>
+        <div class="svc-card fi">
+            <div class="svc-ico"><i class="fa-solid fa-house-chimney"></i></div>
+            <span class="svc-badge">Dayanıklı</span>
+            <h3>Çatı Sistemleri</h3>
+            <p>Çelik çatı konstrüksiyonu, trapez sac kaplama, sandviç panel ve oluklu sac. Fabrika, depo ve konut çatılarında kalıcı çözümler.</p>
+        </div>
+        <div class="svc-card fi">
+            <div class="svc-ico"><i class="fa-solid fa-spa"></i></div>
+            <span class="svc-badge">El İşçiliği</span>
+            <h3>Ferforje Metal</h3>
+            <p>Kapı, balkon korkuluğu, merdiven trabzanı, bahçe çiti ve dekoratif ferforje imalatı. Özgün tasarım ve sağlam yapı bir arada.</p>
+        </div>
+        <div class="svc-card fi">
+            <div class="svc-ico"><i class="fa-solid fa-door-open"></i></div>
+            <span class="svc-badge">Sağlam</span>
+            <h3>Demir Doğrama</h3>
+            <p>Bina giriş kapısı, depo kapısı, güvenlik bariyeri ve pencere korkuluğu imalatı. İstenilen ölçü ve renk seçenekleri ile.</p>
+        </div>
+        <div class="svc-card fi">
+            <div class="svc-ico"><i class="fa-solid fa-building"></i></div>
+            <span class="svc-badge">Endüstriyel</span>
+            <h3>Çelik Konstrüksiyon</h3>
+            <p>Hangar, fabrika, depo ve tarımsal yapılar için çelik taşıyıcı sistem imalatı ve montajı. Hesaplı ve hızlı inşa.</p>
+        </div>
+        <div class="svc-card fi">
+            <div class="svc-ico"><i class="fa-solid fa-wrench"></i></div>
+            <span class="svc-badge">7/24</span>
+            <h3>Onarım & Bakım</h3>
+            <p>Mevcut çatı onarımı, kaynak takviyesi ve metal yapı bakım hizmetleri. Antalya genelinde yerinde müdahale imkânı.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FOTOĞRAF CAROUSEL ═══ -->
+<section id="galeri" class="photo-section">
+    <div style="max-width:1200px;margin:0 auto;padding:0 40px">
+        <div class="section-head fi">
+            <span class="label">Galeri</span>
+            <h2>Çalışmalarımızdan Görüntüler</h2>
+        </div>
+    </div>
+    <div class="photo-wrap fi">
+        <div class="photo-track-outer">
+            <div class="photo-track" id="photoTrack">
+                <div class="photo-slide">
+                    <img src="metal-2.png" alt="Kaynak işleri Antalya Döşemealtı metal" loading="lazy">
+                    <div class="photo-overlay">
+                        <div class="photo-info">
+                            <h3>Kaynak İşleri</h3>
+                            <p>Profesyonel MIG/MAG ve TIG kaynak uygulamaları</p>
+                        </div>
+                        <a href="https://wa.me/905515053941?text=Fotoğrafı%20gördüm%2C%20kaynak%20işi%20için%20teklif%20almak%20istiyorum." target="_blank" class="photo-order">
+                            <i class="fa-brands fa-whatsapp"></i> Teklif Al
+                        </a>
+                    </div>
+                </div>
+                <div class="photo-slide">
+                    <img src="metal-3.png" alt="Ferforje kapı korkuluk Antalya metal" loading="lazy">
+                    <div class="photo-overlay">
+                        <div class="photo-info">
+                            <h3>Ferforje İmalat</h3>
+                            <p>Kapı, korkuluk ve dekoratif ferforje çalışmaları</p>
+                        </div>
+                        <a href="https://wa.me/905515053941?text=Fotoğrafı%20gördüm%2C%20ferforje%20işi%20için%20teklif%20almak%20istiyorum." target="_blank" class="photo-order">
+                            <i class="fa-brands fa-whatsapp"></i> Teklif Al
+                        </a>
+                    </div>
+                </div>
+                <div class="photo-slide">
+                    <img src="metal-4.png" alt="Çatı kaplama çelik konstrüksiyon Antalya" loading="lazy">
+                    <div class="photo-overlay">
+                        <div class="photo-info">
+                            <h3>Çatı Sistemleri</h3>
+                            <p>Trapez sac kaplama ve çelik çatı konstrüksiyonu</p>
+                        </div>
+                        <a href="https://wa.me/905515053941?text=Fotoğrafı%20gördüm%2C%20çatı%20işi%20için%20teklif%20almak%20istiyorum." target="_blank" class="photo-order">
+                            <i class="fa-brands fa-whatsapp"></i> Teklif Al
+                        </a>
+                    </div>
+                </div>
+                <div class="photo-slide">
+                    <img src="metal-5.png" alt="Demir doğrama çelik kapı Antalya Döşemealtı" loading="lazy">
+                    <div class="photo-overlay">
+                        <div class="photo-info">
+                            <h3>Demir Doğrama</h3>
+                            <p>Kapı, pencere ve güvenlik sistemleri imalatı</p>
+                        </div>
+                        <a href="https://wa.me/905515053941?text=Fotoğrafı%20gördüm%2C%20demir%20doğrama%20için%20teklif%20almak%20istiyorum." target="_blank" class="photo-order">
+                            <i class="fa-brands fa-whatsapp"></i> Teklif Al
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="photo-nav">
+            <button class="photo-arrow" id="photoPrev"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="photo-arrow" id="photoNext"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div class="photo-dots" id="photoDots"></div>
+        <div class="photo-thumbs" id="photoThumbs">
+            <div class="photo-thumb active" data-idx="0"><img src="metal-2.png" alt="Kaynak 1"></div>
+            <div class="photo-thumb" data-idx="1"><img src="metal-3.png" alt="Ferforje 2"></div>
+            <div class="photo-thumb" data-idx="2"><img src="metal-4.png" alt="Çatı 3"></div>
+            <div class="photo-thumb" data-idx="3"><img src="metal-5.png" alt="Doğrama 4"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ DETAY KARTLAR ═══ -->
+<section class="detail-section">
+    <div class="detail-inner">
+        <div class="detail-head-grid fi">
+            <div class="detail-head-text">
+                <span class="label">Neler Yapıyoruz?</span>
+                <h2>Antalya'da <em>Metal İşleri</em><br>Tek Adresi</h2>
+                <p>
+                    Döşemealtı atölyemizde kaynak, çatı kaplaması ve ferforje imalatı konularında uzmanlaşmış ekibimizle hizmetinizdeyiz.
+                </p>
+                <p>
+                    Bireysel konut projelerinden büyük sanayi yapılarına kadar her ölçekte iş alıyor, işi zamanında ve söz verdiğimiz kalitede teslim ediyoruz.
+                </p>
+                <div class="btns">
+                    <a href="https://wa.me/905515053941?text=Merhaba%2C%20kaynak%20metal%20işleri%20için%20teklif%20almak%20istiyorum." target="_blank" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp"></i> Teklif Al
+                    </a>
+                    <a href="tel:05515053941" class="btn-call">
+                        <i class="fa-solid fa-phone"></i> Ara: 0 551 505 39 41
+                    </a>
+                </div>
+            </div>
+            <div class="detail-cards">
+                <div class="dcard">
+                    <div class="dcard-top">
+                        <div class="dcard-ico"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                        <div>
+                            <h4>Yerinde Kaynak Hizmeti</h4>
+                            <p class="dcard p">Şantiyenize, fabrikanıza veya evinize gelerek yerinde kaynak uygulamaları yapıyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dcard">
+                    <div class="dcard-top">
+                        <div class="dcard-ico"><i class="fa-solid fa-ruler-combined"></i></div>
+                        <div>
+                            <h4>Ölçüye Göre İmalat</h4>
+                            <p class="dcard p">Ferforje kapı, korkuluk, merdiven ve özel metal ürünler ölçü ve tasarımınıza göre üretilir.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dcard">
+                    <div class="dcard-top">
+                        <div class="dcard-ico"><i class="fa-solid fa-truck"></i></div>
+                        <div>
+                            <h4>Montaj & Teslimat</h4>
+                            <p class="dcard p">Antalya ve çevre ilçelere ürün teslimatı ve profesyonel montaj hizmeti sunuyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dcard">
+                    <div class="dcard-top">
+                        <div class="dcard-ico"><i class="fa-solid fa-building"></i></div>
+                        <div>
+                            <h4>Toplu & Ticari Projeler</h4>
+                            <p class="dcard p">Müteahhitler, fabrikalar ve site yönetimleri için toplu proje fiyatlandırması mevcut.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ HAKKIMIZDA ═══ -->
+<section id="hakkimizda" class="about-section">
+    <div class="about-grid">
+        <div class="about-visual fi">
+            <div class="about-box">
+                <i class="fa-solid fa-fire-flame-curved big-ico"></i>
+                <p>Döşemealtı'nın güvenilir kaynak ve metal işleri atölyesi</p>
+            </div>
+            <div class="trust-badge">
+                <strong><i class="fa-solid fa-certificate"></i></strong>
+                <span>Kalite Garantisi</span>
+            </div>
+        </div>
+        <div class="about-text fi">
+            <span class="label">Hakkımızda</span>
+            <h2>İşin Ustası,<br>Güvenin Adresi</h2>
+            <p>Antalya Döşemealtı'nda kaynak, çatı kaplama ve ferforje metal işleri alanında yıllara dayanan deneyimimizle hizmet veriyoruz.</p>
+            <p>Konyaaltı, Kepez, Lara, Manavgat ve Antalya'nın tüm ilçelerine yerinde hizmet götürüyor, sözümüzü tutuyoruz.</p>
+            <div class="checks">
+                <div class="check"><i class="fa-solid fa-circle-check"></i> Uzman kaynak ve metal ustaları</div>
+                <div class="check"><i class="fa-solid fa-circle-check"></i> Kaliteli hammadde ve malzeme kullanımı</div>
+                <div class="check"><i class="fa-solid fa-circle-check"></i> Zamanında teslimat garantisi</div>
+                <div class="check"><i class="fa-solid fa-circle-check"></i> Antalya genelinde montaj ve servis</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ NEDEN BİZ ═══ -->
+<section id="neden-biz" class="why-section">
+    <div style="max-width:1200px;margin:0 auto;padding:0 40px">
+        <div class="section-head fi">
+            <span class="label">Neden Biz?</span>
+            <h2>Farkımız Ustadan Gelir</h2>
+            <p>Müşterilerimizin bizi tekrar tercih etmesinin dört temel nedeni.</p>
+        </div>
+    </div>
+    <div class="why-grid">
+        <div class="why-card fi">
+            <div class="why-ico"><i class="fa-solid fa-medal"></i></div>
+            <h3>Tecrübeli Ekip</h3>
+            <p>10 yılı aşkın sektör deneyimiyle doğru malzeme ve yöntemi en verimli şekilde uyguluyoruz.</p>
+        </div>
+        <div class="why-card fi">
+            <div class="why-ico"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Sağlam İşçilik</h3>
+            <p>Her projeyi kendi işimiz gibi yapıyoruz. Kaliteli malzeme ve özenli işçilik fark yaratır.</p>
+        </div>
+        <div class="why-card fi">
+            <div class="why-ico"><i class="fa-solid fa-tag"></i></div>
+            <h3>Uygun Fiyat</h3>
+            <p>Gizli ücret yok. Proje başlangıcında net fiyat veriyoruz, sürpriz maliyet yaşamazsınız.</p>
+        </div>
+        <div class="why-card fi">
+            <div class="why-ico"><i class="fa-solid fa-clock"></i></div>
+            <h3>Zamanında Teslimat</h3>
+            <p>Söz verdiğimiz sürede işi bitiriyoruz. İnşaat takviminiz bizim sorunumuz değil, önceliğimiz.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ MÜŞTERİ YORUMLARI ═══ -->
+<section class="testi-section">
+    <div style="max-width:1200px;margin:0 auto;padding:0 40px">
+        <div class="section-head fi">
+            <span class="label">Müşteri Yorumları</span>
+            <h2>Müşterilerimiz Ne Diyor?</h2>
+        </div>
+    </div>
+    <div style="max-width:1200px;margin:0 auto;padding:0 40px">
+        <div class="testi-track-wrap">
+            <div class="testi-track" id="testiTrack">
+                <div class="tcard">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <blockquote>Bahçe kapısı ve korkulukları ferforje yaptırdım. Hem işçilik hem de fiyat açısından çok memnun kaldım. Kesinlikle tavsiye ederim.</blockquote>
+                    <div class="tcard-author"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><h4>Mehmet Y.</h4><span>Döşemealtı – Ferforje Müşterisi</span></div></div>
+                </div>
+                <div class="tcard">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <blockquote>Deposumun çatısını yaptırdık. Ekip zamanında geldi, işi söz verdiği gibi bitirdi. Sağlam ve temiz bir çalışma, teşekkürler.</blockquote>
+                    <div class="tcard-author"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><h4>Ali K.</h4><span>Kepez – Çatı Müşterisi</span></div></div>
+                </div>
+                <div class="tcard">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                    <blockquote>Fabrikamızdaki kaynak onarımı için aradım, hemen geldiler. Profesyonel bir ekip, fiyatı da son derece makul.</blockquote>
+                    <div class="tcard-author"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><h4>Hasan T.</h4><span>Antalya OSB – Kaynak Müşterisi</span></div></div>
+                </div>
+                <div class="tcard">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <blockquote>Merdiven trabzanı ve balkon korkuluğunu yaptırdım. Tasarımı kendim çizdim, aynen istediğim gibi çıktı. Çok başarılı.</blockquote>
+                    <div class="tcard-author"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><h4>İbrahim S.</h4><span>Konyaaltı – Ferforje Müşterisi</span></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="arrow" id="testiPrev"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="dots" id="testiDots"></div>
+            <button class="arrow" id="testiNext"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ KONUM ═══ -->
+<section id="konum" class="location-section">
+    <div class="loc-inner">
+        <div style="text-align:center;margin-bottom:48px" class="fi">
+            <span class="label">Konum</span>
+            <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:.03em;">Bizi Ziyaret Edin</h2>
+        </div>
+        <div class="loc-card fi">
+            <div class="loc-info">
+                <div class="loc-icon"><i class="fa-solid fa-map-marker-alt"></i></div>
+                <div class="loc-text">
+                    <h3>Antalya Metal & Kaynak</h3>
+                    <p><strong>Adres:</strong> Döşemealtı, Antalya</p>
+                    <p><strong>Telefon:</strong> 0 551 505 39 41 &nbsp;|&nbsp; <strong>Çalışma:</strong> Pzt–Cmt 08:00–18:00</p>
+                </div>
+            </div>
+            <iframe class="map-embed" src="https://www.google.com/maps?q=Döşemealtı,+Antalya&hl=tr&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Antalya Metal Kaynak Konumu – Döşemealtı"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ İLETİŞİM ═══ -->
+<section id="iletisim" class="contact-section">
+    <div style="max-width:1200px;margin:0 auto;padding:0 40px">
+        <div class="section-head fi">
+            <span class="label">İletişim</span>
+            <h2>Teklif & İletişim</h2>
+        </div>
+    </div>
+    <div class="contact-grid">
+        <div class="cinfo fi">
+            <h3>İletişim Bilgileri</h3>
+            <div class="irow">
+                <div class="iico ph"><i class="fa-solid fa-phone"></i></div>
+                <div><h4>Telefon</h4><p>0 551 505 39 41</p></div>
+            </div>
+            <div class="irow">
+                <div class="iico wa"><i class="fa-brands fa-whatsapp"></i></div>
+                <div>
+                    <h4>WhatsApp – Hızlı Teklif</h4>
+                    <p>0 551 505 39 41</p>
+                    <a href="https://wa.me/905515053941?text=Merhaba%2C%20kaynak%20metal%20işleri%20için%20teklif%20almak%20istiyorum." target="_blank" class="wa-btn">
+                        <i class="fa-brands fa-whatsapp"></i> Hızlı Teklif Al
+                    </a>
+                </div>
+            </div>
+            <div class="irow">
+                <div class="iico loc"><i class="fa-solid fa-location-dot"></i></div>
+                <div><h4>Adres</h4><p>Döşemealtı, Antalya</p></div>
+            </div>
+            <div class="hours">
+                <h4><i class="fa-regular fa-clock"></i> Çalışma Saatleri</h4>
+                <div class="hrow"><span>Pazartesi – Cumartesi</span><strong>08:00 – 18:00</strong></div>
+                <div class="hrow"><span>Pazar</span><strong class="kapali">Kapalı</strong></div>
+            </div>
+        </div>
+        <div class="form-wrap fi">
+            <h3>Teklif & Bilgi Formu</h3>
+            <div class="frow">
+                <div class="fg"><label>Ad Soyad *</label><input type="text" placeholder="Adınız Soyadınız"></div>
+                <div class="fg"><label>Telefon *</label><input type="tel" placeholder="05xx xxx xx xx"></div>
+            </div>
+            <div class="fg"><label>E-posta</label><input type="email" placeholder="ornek@email.com"></div>
+            <div class="fg">
+                <label>Hizmet Türü</label>
+                <select>
+                    <option value="">Seçiniz...</option>
+                    <option>Kaynak İşleri</option>
+                    <option>Çatı Kaplama & Konstrüksiyon</option>
+                    <option>Ferforje Kapı / Korkuluk</option>
+                    <option>Demir Doğrama</option>
+                    <option>Çelik Konstrüksiyon</option>
+                    <option>Onarım & Bakım</option>
+                    <option>Diğer</option>
+                </select>
+            </div>
+            <div class="fg"><label>Mesaj *</label><textarea placeholder="Yapmak istediğiniz iş hakkında kısa bilgi verin (ölçü, konum, adet vb.)..."></textarea></div>
+            <button class="submit-btn" id="submitBtn"><i class="fa-solid fa-paper-plane"></i> Mesaj Gönder</button>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <div class="footer-logo">
+        <svg width="22" height="22" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="8" fill="#e85d04"/><path d="M22 8 L26 18 L30 14 L24 26 L28 22 L20 36 L18 24 L14 28 L20 16 L16 20 Z" fill="white" opacity=".95"/><circle cx="22" cy="22" r="3" fill="#ffd166"/></svg>
+        <span>Antalya Metal & Kaynak</span>
+    </div>
+    <p>© 2026 Antalya Metal & Kaynak – Döşemealtı, Antalya. Tüm hakları saklıdır.</p>
+    <p class="footer-seo">
+        Kaynak antalya | Ferforje antalya | Çatı kaplama antalya | Metal işleri antalya |
+        Döşemealtı kaynak | Demir doğrama antalya | Çelik konstrüksiyon antalya | Kapı ferforje antalya |
+        Metal merdiven antalya | Kaynak ustası antalya
+    </p>
+</footer>
+
+<script>
+(function(){
+    /* Navbar Scroll */
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+
+    /* Mobile Menu */
+    const toggleBtn = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const toggleIcon = document.getElementById('toggleIcon');
+    toggleBtn.addEventListener('click', e => {
+        e.stopPropagation();
+        const open = mobileMenu.classList.toggle('open');
+        toggleIcon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            toggleIcon.className = 'fa-solid fa-bars';
+        });
+    });
+    document.addEventListener('click', e => {
+        if (!nav.contains(e.target)) {
+            mobileMenu.classList.remove('open');
+            toggleIcon.className = 'fa-solid fa-bars';
+        }
+    });
+
+    /* Photo Carousel */
+    (function(){
+        const track = document.getElementById('photoTrack');
+        const slides = Array.from(track.children);
+        const dotsEl = document.getElementById('photoDots');
+        const thumbs = document.querySelectorAll('.photo-thumb');
+        let cur = 0, total = slides.length;
+
+        function buildDots() {
+            dotsEl.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                const d = document.createElement('button');
+                d.className = 'photo-dot' + (i === cur ? ' active' : '');
+                d.setAttribute('aria-label', 'Fotoğraf ' + (i+1));
+                d.onclick = () => goTo(i);
+                dotsEl.appendChild(d);
+            }
+        }
+        function goTo(idx) {
+            cur = (idx + total) % total;
+            track.style.transform = `translateX(-${cur * 100}%)`;
+            dotsEl.querySelectorAll('.photo-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
+            thumbs.forEach((t, i) => t.classList.toggle('active', i === cur));
+        }
+        document.getElementById('photoPrev').onclick = () => goTo(cur - 1);
+        document.getElementById('photoNext').onclick = () => goTo(cur + 1);
+        thumbs.forEach(t => t.addEventListener('click', () => goTo(parseInt(t.dataset.idx))));
+
+        let auto = setInterval(() => goTo(cur + 1), 4500);
+        track.parentElement.addEventListener('mouseenter', () => clearInterval(auto));
+        track.parentElement.addEventListener('mouseleave', () => { auto = setInterval(() => goTo(cur + 1), 4500); });
+
+        let sx = 0;
+        track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; clearInterval(auto); }, {passive:true});
+        track.addEventListener('touchend', e => {
+            const dx = sx - e.changedTouches[0].clientX;
+            if (Math.abs(dx) > 50) goTo(dx > 0 ? cur + 1 : cur - 1);
+            auto = setInterval(() => goTo(cur + 1), 4500);
+        }, {passive:true});
+        buildDots();
+    })();
+
+    /* Testi Carousel */
+    (function(){
+        const track = document.getElementById('testiTrack');
+        const slides = Array.from(track.children);
+        const dotsEl = document.getElementById('testiDots');
+        let cur = 0;
+        function vis() { return window.innerWidth < 760 ? 1 : 2; }
+        function total() { return Math.ceil(slides.length / vis()); }
+        function buildDots() {
+            dotsEl.innerHTML = '';
+            for (let i = 0; i < total(); i++) {
+                const d = document.createElement('button');
+                d.className = 'dot' + (i === cur ? ' active' : '');
+                d.onclick = () => go(i);
+                dotsEl.appendChild(d);
+            }
+        }
+        function go(idx) {
+            cur = Math.max(0, Math.min(idx, total() - 1));
+            const sw = slides[0].getBoundingClientRect().width;
+            track.style.transform = `translateX(-${cur * vis() * (sw + 20)}px)`;
+            dotsEl.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === cur));
+        }
+        document.getElementById('testiPrev').onclick = () => go(cur - 1);
+        document.getElementById('testiNext').onclick = () => go(cur + 1);
+        buildDots();
+        window.addEventListener('resize', () => { go(0); buildDots(); });
+        let sx = 0;
+        track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive:true});
+        track.addEventListener('touchend', e => {
+            const dx = sx - e.changedTouches[0].clientX;
+            if (Math.abs(dx) > 50) go(dx > 0 ? cur + 1 : cur - 1);
+        }, {passive:true});
+    })();
+
+    /* Scroll Fade-in */
+    const io = new IntersectionObserver(entries => {
+        entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+                setTimeout(() => e.target.classList.add('vis'), i * 60);
+                io.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fi').forEach(el => io.observe(el));
+
+    /* Form Submit */
+    const sb = document.getElementById('submitBtn');
+    if (sb) sb.addEventListener('click', e => {
+        e.preventDefault();
+        alert('Mesajınız alındı! En kısa sürede sizi arayacağız. 📞 0 551 505 39 41');
+    });
+
+    /* Smooth Scroll */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const t = document.querySelector(a.getAttribute('href'));
+            if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - 70, behavior: 'smooth' });
+        });
+    });
+})();
+</script>
+
+</body>
+</html>
